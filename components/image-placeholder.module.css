@@ -1,0 +1,21 @@
+.placeholder {
+  position: relative;
+  overflow: hidden;
+  min-height: 20rem;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+.photo {
+  object-fit: cover;
+}
+.label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.35rem 0.65rem;
+  background: #203d32;
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

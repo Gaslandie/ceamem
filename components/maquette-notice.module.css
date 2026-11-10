@@ -1,0 +1,127 @@
+.dialog {
+  width: min(38rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--laterite);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%), 0 4px 16px rgb(0 0 0 / 12%);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  animation: appear 180ms var(--ease) both;
+}
+
+.dialog::backdrop {
+  background: rgb(24 34 30 / 38%);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1.25rem, 4vw, 2rem) 0.75rem;
+}
+
+.badge {
+  padding: 0.2rem 0.65rem;
+  color: var(--laterite);
+  background: var(--paper-2);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.close {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+}
+
+.close:hover {
+  background: var(--paper-2);
+  border-color: var(--ink-muted);
+}
+
+.content {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.25rem clamp(1.25rem, 4vw, 2rem) 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.title {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  text-wrap: pretty;
+}
+
+.title:focus {
+  outline: none;
+}
+
+.content > p + p {
+  margin-top: 1rem;
+}
+
+.next {
+  margin-top: 1.5rem;
+  padding: 1rem 1.15rem;
+  background: var(--paper-2);
+  border-left: 3px solid var(--laterite);
+}
+
+.next h3 {
+  margin-bottom: 0.35rem;
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 1rem clamp(1.25rem, 4vw, 2rem) 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footer button {
+  width: 100%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog[open] {
+    animation: none;
+  }
+}

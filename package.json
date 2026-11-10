@@ -1,0 +1,25 @@
+{
+  "name": "site-centre-emergent-ismgb",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Maquette front-end du site du Centre Emergent de l'ISMGB (Boke) - rubrique Accueil",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "dev:local": "NEXT_DIST_DIR=.next-preview next dev --hostname 127.0.0.1 --port 3001",
+    "build:check": "NEXT_DIST_DIR=.next-verification next build",
+    "build:pages": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/ceamem NEXT_DIST_DIR=.next-pages next build"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  }
+}

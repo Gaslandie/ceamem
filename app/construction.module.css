@@ -1,0 +1,84 @@
+.page {
+  padding-block: 2rem 6rem;
+  min-height: 65vh;
+}
+.fil ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink-muted);
+  font-size: 0.9375rem;
+}
+.fil li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.fil li + li::before {
+  content: "/";
+  color: var(--ink-muted);
+}
+.fil a {
+  display: inline-block;
+  padding-block: 0.5rem;
+}
+.fil a:hover {
+  color: var(--laterite);
+  text-decoration: underline;
+}
+.statut {
+  display: inline-flex;
+  margin-top: 3rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--laterite);
+  color: var(--laterite);
+  font-size: 0.9375rem;
+}
+.titre {
+  margin-top: 1.3rem;
+  max-width: 24ch;
+  font-size: clamp(2.5rem, 4.3vw, 4rem);
+  line-height: 1.13;
+}
+.chapeau {
+  margin-top: 1.5rem;
+  max-width: 54ch;
+  font-size: 1.1875rem;
+  color: var(--ink-80);
+}
+.liste {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+  max-width: 60rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+.liste a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 60px;
+  padding-block: 1rem;
+  font-size: 1.0625rem;
+  border-bottom: 1px solid var(--rule);
+}
+.liste a:hover {
+  color: var(--laterite);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+@media (max-width: 720px) {
+  .liste {
+    grid-template-columns: 1fr;
+  }
+  .page {
+    padding-bottom: 4rem;
+  }
+}
