@@ -1,8 +1,8 @@
 .dialog {
-  width: min(38rem, calc(100% - 2rem));
+  width: min(38rem, calc(100% - 32px));
   max-width: none;
-  max-height: calc(100vh - 2rem);
-  max-height: calc(100dvh - 2rem);
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   margin: auto;
   padding: 0;
   overflow: hidden;
@@ -31,18 +31,19 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem clamp(1.25rem, 4vw, 2rem) 0.75rem;
+  gap: 12px;
+  padding: 1rem clamp(16px, 4vw, 32px) 0.75rem;
 }
 
 .badge {
-  padding: 0.2rem 0.65rem;
+  padding: 0.2rem 10px;
   color: var(--laterite);
   background: var(--paper-2);
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.5;
+  overflow-wrap: normal;
 }
 
 .close {
@@ -64,7 +65,7 @@
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 0.25rem clamp(1.25rem, 4vw, 2rem) 1.5rem;
+  padding: 0.25rem clamp(16px, 4vw, 32px) 1.5rem;
   font-size: 1.0625rem;
   line-height: 1.65;
 }
@@ -101,12 +102,19 @@
 
 .footer {
   flex-shrink: 0;
-  padding: 1rem clamp(1.25rem, 4vw, 2rem) 1.25rem;
+  padding: 1rem clamp(16px, 4vw, 32px) 1.25rem;
   border-top: 1px solid var(--rule);
 }
 
 .footer button {
   width: 100%;
+  padding-inline: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .footer button > span {
+    display: none;
+  }
 }
 
 @keyframes appear {

@@ -17,12 +17,12 @@ export type Slide = {
 export const SLIDES: Slide[] = [
   {
     index: "01",
-    eyebrow: "Boké, Guinée · Institut Supérieur des Mines et Géologie",
+    eyebrow: "Boké, Guinée",
     titre: "Le Centre Émergent de l’ISMGB",
     texte:
-      "Un centre à vocation régionale. Retrouvez les rubriques consacrées à la formation, à la recherche et aux partenariats.",
-    cta: { label: "Découvrir le centre", href: "/a-propos" },
-    ctaSecondaire: { label: "Nos offres de formation", href: "/nos-offres" },
+      "Premier cycle, ingénierie, master, doctorat et formations courtes : retrouvez les rubriques consacrées aux formations et à la recherche.",
+    cta: { label: "Voir les formations", href: "#formations" },
+    ctaSecondaire: { label: "Le centre en bref", href: "#le-centre" },
     image: "Photographie du centre",
   },
   {
@@ -31,7 +31,7 @@ export const SLIDES: Slide[] = [
     titre: "Les parcours de formation",
     texte:
       "Premier cycle (Licence, DUT, CPC), ingénierie, master, doctorat et formations courtes. Les fiches détaillées sont à fournir.",
-    cta: { label: "Explorer les formations", href: "/nos-offres" },
+    cta: { label: "Voir les formations", href: "#formations" },
     ctaSecondaire: {
       label: "Formations courtes",
       href: "/nos-offres/formations-courtes",
@@ -44,7 +44,7 @@ export const SLIDES: Slide[] = [
     titre: "La recherche et la vie scientifique",
     texte:
       "Journées scientifiques, programmes partenaires, publications scientifiques et Laboratoire de recherche (LRA).",
-    cta: { label: "Explorer la recherche", href: "/recherches" },
+    cta: { label: "Voir les rubriques de recherche", href: "#recherche" },
     ctaSecondaire: {
       label: "Publications scientifiques",
       href: "/recherches/publications-scientifiques",
@@ -72,25 +72,25 @@ export const OFFRES = [
   {
     numero: "02",
     titre: "Ingénierie",
-    detail: "Fiche de formation à fournir",
+    detail: "",
     href: "/nos-offres/ingenierie",
   },
   {
     numero: "03",
     titre: "Master",
-    detail: "Fiche de formation à fournir",
+    detail: "",
     href: "/nos-offres/master",
   },
   {
     numero: "04",
     titre: "Doctorat",
-    detail: "Fiche de formation à fournir",
+    detail: "",
     href: "/nos-offres/doctorat",
   },
   {
     numero: "05",
     titre: "Formations courtes",
-    detail: "Fiches de formation à fournir",
+    detail: "",
     href: "/nos-offres/formations-courtes",
   },
 ];

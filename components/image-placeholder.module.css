@@ -8,6 +8,24 @@
 .photo {
   object-fit: cover;
 }
+.empty {
+  display: grid;
+  place-items: center;
+}
+.empty .label {
+  position: static;
+  background: transparent;
+  color: var(--ink-muted);
+  padding: 1.5rem;
+}
+.label a {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  max-width: 100%;
+}
 .label {
   position: absolute;
   bottom: 1rem;

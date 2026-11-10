@@ -36,6 +36,7 @@
 }
 .mainInner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
   min-height: 110px;
@@ -46,7 +47,12 @@
   align-items: center;
   gap: 1rem;
   min-width: 0;
+  flex: 1 1 12rem;
   color: var(--ink);
+}
+.brandTexte {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .brandLogo {
   display: grid;

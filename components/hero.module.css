@@ -17,9 +17,11 @@
 }
 .slides {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
 }
 .contenu {
   grid-area: 1 / 1;
+  min-width: 0;
   padding-block: 1rem 2.5rem;
 }
 .surtitre {
@@ -54,6 +56,7 @@
 }
 .commande {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -85,7 +88,7 @@
   width: 46px;
   height: 46px;
   border: 1px solid var(--rule-strong);
-  font-size: 1.5rem;
+  font-size: 24px;
   transition:
     color 0.2s,
     background 0.2s;
@@ -113,7 +116,7 @@
 }
 @media (max-width: 900px) {
   .scene {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
   .titre {

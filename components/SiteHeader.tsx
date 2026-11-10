@@ -26,6 +26,7 @@ const INDEX_RUBRIQUES = RUBRIQUES.flatMap((rubrique) => [
 ]);
 
 export default function SiteHeader() {
+  const header = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const [menuOuvert, setMenuOuvert] = useState(false);
   const [rechercheOuverte, setRechercheOuverte] = useState(false);
@@ -47,6 +48,24 @@ export default function SiteHeader() {
     setRechercheOuverte(false);
     setSousMenu(null);
   };
+
+  useEffect(() => {
+    const element = header.current;
+    if (!element) return;
+    const root = document.documentElement;
+    const previous = root.style.getPropertyValue("--site-header-height");
+    const measure = () => root.style.setProperty(
+      "--site-header-height", `${element.getBoundingClientRect().height}px`,
+    );
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    measure();
+    return () => {
+      observer.disconnect();
+      if (previous) root.style.setProperty("--site-header-height", previous);
+      else root.style.removeProperty("--site-header-height");
+    };
+  }, []);
 
   useEffect(() => {
     fermerPanneaux();
@@ -103,7 +122,7 @@ export default function SiteHeader() {
       : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className={styles.header}>
+    <header ref={header} className={styles.header}>
       <div className={styles.utility}>
         <div className={`container ${styles.utilityInner}`}>
           <p>Boké, Guinée</p>

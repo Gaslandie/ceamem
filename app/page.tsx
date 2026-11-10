@@ -29,26 +29,16 @@ export default function Accueil() {
         </div>
       </nav>
 
-      <section className="section" aria-labelledby="titre-centre">
+      <section id="le-centre" className="section" aria-labelledby="titre-centre">
         <div className={`container ${styles.presentation}`}>
           <div>
-            <p className="eyebrow">Le centre</p>
             <h2 id="titre-centre" className={styles.titreBloc}>
               Le Centre Émergent
-              <br />
-              de l’ISMGB
             </h2>
-            <p className={styles.accroche}>
-              Un centre à vocation régionale, à Boké.
-            </p>
-            <p className={styles.paragraphe}>
-              Le Centre Émergent est rattaché à l’Institut Supérieur des Mines
-              et Géologie de Boké, en Guinée. Découvrez les rubriques consacrées
-              aux formations, à la recherche et aux partenariats.
-            </p>
             <Link href="/a-propos" className="link-arrow">
-              Mieux connaître le centre
+              À propos du centre
             </Link>
+            <p className="placeholder-note">Rubrique détaillée en préparation.</p>
           </div>
           <dl className={styles.identite}>
             {IDENTITE.map((ligne) => (
@@ -69,13 +59,10 @@ export default function Accueil() {
         <div className="container">
           <div className="section-head">
             <div>
-              <p className="eyebrow">Nos offres</p>
               <h2 id="titre-formations">Les formations</h2>
             </div>
             <p className={styles.texteSection}>
-              Premier cycle, ingénierie, master, doctorat et formations courtes.
-              Les informations détaillées et les documents de formation sont à
-              fournir.
+              Cinq rubriques, du premier cycle aux formations courtes.
             </p>
           </div>
           <div className={styles.formationGrille}>
@@ -89,7 +76,9 @@ export default function Accueil() {
                   <Link href={offre.href} className={styles.offreLigne}>
                     <span>
                       <span className={styles.offreTitre}>{offre.titre}</span>
-                      <span className={styles.offreDetail}>{offre.detail}</span>
+                      {offre.detail && (
+                        <span className={styles.offreDetail}>{offre.detail}</span>
+                      )}
                     </span>
                   </Link>
                 </li>
@@ -98,7 +87,7 @@ export default function Accueil() {
           </div>
           <div className={styles.sectionPied}>
             <p className="placeholder-note">
-              Fiches de formation et PDF à fournir.
+              Fiches de formation et PDF à fournir. Pages détaillées en préparation.
             </p>
             <Link href="/nos-offres" className="link-arrow">
               Toutes les formations
@@ -115,13 +104,11 @@ export default function Accueil() {
         <div className="container">
           <div className="section-head">
             <div>
-              <p className="eyebrow">Vie scientifique</p>
               <h2 id="titre-recherche">Recherches</h2>
             </div>
             <p className={styles.texteSection}>
-              Retrouvez les rubriques dédiées aux journées scientifiques, aux
-              programmes partenaires, aux publications et au Laboratoire de
-              recherche.
+              Publications, programmes partenaires et vie du laboratoire :
+              les rubriques de la recherche.
             </p>
           </div>
           <div className={styles.rechercheGrille}>
@@ -144,49 +131,27 @@ export default function Accueil() {
 
       <section
         id="actualites"
-        className={`section ${styles.vie}`}
+        className={`section ${styles.compactSection} ${styles.vie}`}
         aria-labelledby="titre-vie"
       >
         <div className="container">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Vie du centre</p>
-              <h2 id="titre-vie">Actualités & rendez-vous</h2>
-            </div>
-            <p className={styles.texteSection}>
-              Les actualités, les événements à venir et les appels à
-              candidatures du Centre Émergent.
-            </p>
-          </div>
-          <div className={styles.vieGrille}>
-            <article className={styles.actualites}>
-              <ImagePlaceholder
-                label="Photographie d’actualité"
-                className={styles.photoActualite}
-              />
-              <div className={styles.actualitesTexte}>
-                <p className="eyebrow">Actualités</p>
-                <h3>Les actualités du centre</h3>
-                <p>Articles, dates et informations à fournir.</p>
-              </div>
-            </article>
-            <div className={styles.agenda}>
-              <section aria-labelledby="titre-agenda">
-                <p className="eyebrow">Agenda</p>
-                <h3 id="titre-agenda">Événements à venir</h3>
-                <p>Dates et programme à fournir.</p>
-              </section>
-              <section aria-labelledby="titre-appels">
-                <p className="eyebrow">Recrutements</p>
-                <h3 id="titre-appels">Appels à candidatures</h3>
-                <p>
-                  Appels à candidatures, appels d’offres et résultats à fournir.
-                </p>
-                <Link href="/recrutements" className="link-arrow">
-                  Consulter les recrutements
-                </Link>
-              </section>
-            </div>
+          <h2 id="titre-vie" className={styles.titreCompact}>Actualités & rendez-vous</h2>
+          <div className={styles.attentes}>
+            <section aria-labelledby="titre-actualites">
+              <h3 id="titre-actualites">Actualités</h3>
+              <p>Articles et dates à fournir.</p>
+            </section>
+            <section aria-labelledby="titre-agenda">
+              <h3 id="titre-agenda">Agenda</h3>
+              <p>Dates et programme des événements à fournir.</p>
+            </section>
+            <section aria-labelledby="titre-appels">
+              <h3 id="titre-appels">Recrutements</h3>
+              <p>Appels à candidatures, appels d’offres et résultats à fournir.</p>
+              <Link href="/recrutements" className="link-arrow">
+                Voir la rubrique
+              </Link>
+            </section>
           </div>
         </div>
       </section>
@@ -197,15 +162,7 @@ export default function Accueil() {
       >
         <div className={`container ${styles.redevGrille}`}>
           <div>
-            <p className="eyebrow eyebrow--light">
-              Information institutionnelle
-            </p>
             <h2 id="titre-transparence">Transparence & responsabilité</h2>
-            <p className={styles.redevTexte}>
-              Documents et rapports, transparence institutionnelle, sauvegarde
-              environnementale et sociale : accédez aux rubriques dédiées.
-            </p>
-            <span className={styles.filet} aria-hidden="true" />
           </div>
           <ul className={styles.redevListe}>
             {REDEVABILITE.map((rubrique) => (
@@ -220,25 +177,14 @@ export default function Accueil() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="titre-chiffres">
+      <section className={`section ${styles.compactSection}`} aria-labelledby="titre-chiffres">
         <div className="container">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Repères</p>
-              <h2 id="titre-chiffres">Le centre en chiffres</h2>
-            </div>
-            <p className={styles.texteSection}>
-              Données chiffrées à fournir par le centre.
-            </p>
-          </div>
+          <h2 id="titre-chiffres" className={styles.titreCompact}>Le centre en chiffres</h2>
+          <p className={styles.noteAttente}>Données chiffrées à fournir par le centre.</p>
           <ul className={styles.chiffresListe}>
             {CHIFFRES_CLES.map((chiffre) => (
               <li key={chiffre.label}>
-                <span className={styles.chiffreValeur} aria-hidden="true">
-                  —
-                </span>
-                <span className={styles.chiffreLibelle}>{chiffre.label}</span>
-                <span className={styles.chiffreEtat}>À fournir</span>
+                {chiffre.label}
               </li>
             ))}
           </ul>
@@ -246,26 +192,18 @@ export default function Accueil() {
       </section>
 
       <section
-        className={`section ${styles.partenaires}`}
+        className={`section ${styles.compactSection} ${styles.partenaires}`}
         aria-labelledby="titre-partenaires"
       >
         <div className="container">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Coopération</p>
-              <h2 id="titre-partenaires">Partenariats</h2>
-            </div>
-            <p className={styles.texteSection}>
-              Partenariats industriels et académiques. Noms, logos et fiches
-              partenaires à fournir.
-            </p>
-          </div>
+          <h2 id="titre-partenaires" className={styles.titreCompact}>Partenariats</h2>
+          <p className={styles.noteAttente}>Noms et présentations des partenaires à fournir.</p>
           <ul className={styles.partenairesListe}>
             {PARTENAIRES.map((partenaire) => (
               <li key={partenaire.nom}>
                 <Link href={partenaire.href}>
-                  <span className={styles.logoVide}>Logos à fournir</span>
-                  <span className={styles.partenaireNom}>{partenaire.nom}</span>
+                  <span>{partenaire.nom}</span>
+                  <span aria-hidden="true">→</span>
                 </Link>
               </li>
             ))}
