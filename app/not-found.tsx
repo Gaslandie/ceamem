@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/SiteLink";
 import styles from "./construction.module.css";
 
 export default function PageIntrouvable() {

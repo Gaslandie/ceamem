@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/SiteLink";
 import { RUBRIQUES, PAGES_TECHNIQUES, hrefRubrique } from "@/lib/arborescence";
 import styles from "./site-footer.module.css";
 
